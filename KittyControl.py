@@ -1,11 +1,18 @@
 # Kitty box control program
+#
+# Uses PIR sensor to monitor presence of cat in litter box and
+# turns on exhaust fan and lights.  Fan remains on for On_Time after
+# cat presence is no longer detected.
+# Lights are ramped up with a PWM to prevent startling the kittie.
+#
 # John Hebert
+# 2017
 
 # imports
 import RPi.GPIO as GPIO
 import time
 
-# Varibles
+# Variables
 PIR_Sensor = 11                     # Motion sensor input
 LED_Lights = 3                      # PWM output for LEDs
 Fan = 7                             # fan relay output
